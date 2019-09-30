@@ -7,10 +7,17 @@ Welcome to GitHub—where millions of developers work together on software. Read
 Pro Kabaddi League is a professional-level kabaddi league that started in 2014. Currently, the League is in its 7th season, which started on 20 July 2019 with the first match between U Mumba and Telugu Titans. The final match will be played on 19 October 2019.The aim of this project is to predict various outcomes at the end of the tournament.
 Predictions to be achieved
 
-1.Predict the winner of the tournament. 2.Predict the top team in the points table after the completion of the league matches. 3.Predict the team with the highest points for successful raids. 4.Predict the team with the highest points for successful tackles. 5.Predict the team with the highest super-performance total. 6.Predict the player with the highest SUCCESSFUL RAID percentage. 7.Predict the player with the highest SUCCESSFUL TACKLE percentage.
+1.Predict the winner of the tournament. 
+2.Predict the top team in the points table after the completion of the league matches. 
+3.Predict the team with the highest points for successful raids. 
+4.Predict the team with the highest points for successful tackles. 
+5.Predict the team with the highest super-performance total. 
+6.Predict the player with the highest SUCCESSFUL RAID percentage. 
+7.Predict the player with the highest SUCCESSFUL TACKLE percentage.
 Prerequisites
 
 1.Any Python Software – to run Python code (Jupyter Notebook used)
+
 2.Input data to make predictions – Data gathered from below websites
 
     https://www.prokabaddi.com/stats
@@ -90,18 +97,13 @@ Predict the top team in the points table after the completion of the league matc
 5.Team with the highest super-performance total. - Bengal Warriors
 6.Player with the highest SUCCESSFUL RAID percentage. - Pawan Kumar Sehrawat
 7.Player with the highest SUCCESSFUL TACKLE percentage. - Fazel Atrachali
+
 ## Built With
 
     Jupyter Notebook – Software used
     Python – Programming Language used
     csv – Input file format used
     web-scraping – Manually done.
-
-## Authors
-
-    Praful Turanur – prafulturanur2192@gmail.com
-    Amrutha Shenoy – amritakshenoy3435@gmail.com
-    Ayyasamy Nataraj – ayyasamy2301@gmail.com
 
 ## Acknowledgments
 
