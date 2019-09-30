@@ -8,13 +8,20 @@ Pro Kabaddi League is a professional-level kabaddi league that started in 2014. 
 Predictions to be achieved
 
 1.Predict the winner of the tournament. 
+
 2.Predict the top team in the points table after the completion of the league matches. 
+
 3.Predict the team with the highest points for successful raids. 
+
 4.Predict the team with the highest points for successful tackles. 
+
 5.Predict the team with the highest super-performance total. 
+
 6.Predict the player with the highest SUCCESSFUL RAID percentage. 
+
 7.Predict the player with the highest SUCCESSFUL TACKLE percentage.
-Prerequisites
+
+## Prerequisites
 
 1.Any Python Software – to run Python code (Jupyter Notebook used)
 
