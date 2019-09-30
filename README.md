@@ -2,89 +2,108 @@
 
 Welcome to GitHub—where millions of developers work together on software. Ready to get started? Let’s learn how this all works by building and publishing your first GitHub Pages website!
 
-## Repositories
+## upGrad Pro Hacking League
 
-Right now, we’re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that you—or your collaborators—make to each file, so you can always go back to previous versions of your project if you make any mistakes.
+Pro Kabaddi League is a professional-level kabaddi league that started in 2014. Currently, the League is in its 7th season, which started on 20 July 2019 with the first match between U Mumba and Telugu Titans. The final match will be played on 19 October 2019.The aim of this project is to predict various outcomes at the end of the tournament.
+Predictions to be achieved
 
-This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
+1.Predict the winner of the tournament. 2.Predict the top team in the points table after the completion of the league matches. 3.Predict the team with the highest points for successful raids. 4.Predict the team with the highest points for successful tackles. 5.Predict the team with the highest super-performance total. 6.Predict the player with the highest SUCCESSFUL RAID percentage. 7.Predict the player with the highest SUCCESSFUL TACKLE percentage.
+Prerequisites
 
-## Describe your project
+1.Any Python Software – to run Python code (Jupyter Notebook used)
+2.Input data to make predictions – Data gathered from below websites
 
-You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
+    https://www.prokabaddi.com/stats
+    https://www.sportskeeda.com/go/pro-kabaddi/stats
 
-[Learn more about READMEs](https://help.github.com/en/articles/about-readmes)
+3.The below input files are used for this project. Only data related with season 7 pro kabaddi league is used for predictions.
 
-## Your first website
+    Schedule.csv - This file contains the entire season 7 schedule with winners, unfinished matches will not have winner
+    Playoff.csv - This file contains the details of playoff matches schedule
+    Raid_Points.csv - Raid points of each team
+    Tackle_Points.csv - Tackling points of each team
+    Super Raids.csv - Super raids of each team
+    Super Tackles.csv - Super tackles of each team
+    All-outs inflicted.csv - All-outs inflicted by each team
+    All-outs conceded.csv - All-outs conceded by each team
+    Raider details.csv - Top10 raider details about total raids and successful raids
+    Tackler details.csv - Top10 tackler details about total tackles and successful tackles
 
-**GitHub Pages** is a free and easy way to create a website using the code that lives in your GitHub repositories. You can use GitHub Pages to build a portfolio of your work, create a personal website, or share a fun project that you coded with the world. GitHub Pages is automatically enabled in this repository, but when you create new repositories in the future, the steps to launch a GitHub Pages website will be slightly different.
+Process (How the predictions are made)
 
-[Learn more about GitHub Pages](https://pages.github.com/)
+The below mentioned logics are used to make the predictions.
 
-## Rename this repository to publish your site
+Predict the top team in the points table after the completion of the league matches
 
-We've already set-up a GitHub Pages website for you, based on your personal username. This repository is called `hello-world`, but you'll rename it to: `username.github.io`, to match your website's URL address. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
+    Fetch the schedule file with winner details
+    Split the schedule file into completed matches, non completed matches
+    Predict the outcome of upcoming matches based on earlier results in season 7.
+    Combining both the files into single file. Now this combined file will have full schedule with results.
+    Calculate number of wins by each team and rank the teams based on the winning points.
+    The top ranking team is table topper of league matches
 
-Let's get started! To update this repository’s name, click the `Settings` tab on this page. This will take you to your repository’s settings page. 
+## Predict the winner of the tournament.
 
-![repo-settings-image](https://user-images.githubusercontent.com/18093541/63130482-99e6ad80-bf88-11e9-99a1-d3cf1660b47e.png)
+    Replacing team names in playoff time table based on the predicted ranking table
+    Apply the winner predictions used in the previous tasks. If the number of matches won by teams against each other is same then the total points scored is considered to choose the winner.
 
-Under the **Repository Name** heading, type: `username.github.io`, where username is your username on GitHub. Then click **Rename**—and that’s it. When you’re done, click your repository name or browser’s back button to return to this page.
+## Predict the team with the highest points for successful raids.
 
-<img width="1039" alt="rename_screenshot" src="https://user-images.githubusercontent.com/18093541/63129466-956cc580-bf85-11e9-92d8-b028dd483fa5.png">
+    Find number of matches will be played by each team based on the predicted results
+    Calculate the total raid points by taking the average of points scored till now and multiply it with number of matches will be played by each team.
 
-Once you click **Rename**, your website will automatically be published at: https://your-username.github.io/. The HTML file—called `index.html`—is rendered as the home page and you'll be making changes to this file in the next step.
+## Predict the team with the highest points for successful tackles.
 
-Congratulations! You just launched your first GitHub Pages website. It's now live to share with the entire world
+    Find number of matches will be played by each team based on the predicted
+    Calculate the total tackle points by taking the average of points scored till now and multiply it with number of matches will be played by each team.
 
-## Making your first edit
+## Predict the team with the highest super-performance total.
 
-When you make any change to any file in your project, you’re making a **commit**. If you fix a typo, update a filename, or edit your code, you can add it to GitHub as a commit. Your commits represent your project’s entire history—and they’re all saved in your project’s repository.
+    Fetch the details of super-raids, super-tackles, all-outs inflicted in the tournament and all-outs conceded in the tournament.
 
-With each commit, you have the opportunity to write a **commit message**, a short, meaningful comment describing the change you’re making to a file. So you always know exactly what changed, no matter when you return to a commit.
+    Calculate the Super-performance total using formula:
 
-## Practice: Customize your first GitHub website by writing HTML code
+    S.P.T. = Total number of super-raids in the tournament +
 
-Want to edit the site you just published? Let’s practice commits by introducing yourself in your `index.html` file. Don’t worry about getting it right the first time—you can always build on your introduction later.
+    total number of super-tackles in the tournament +
 
-Let’s start with this template:
+    total number of all-outs inflicted in the tournament -
 
-```
-<p>Hello World! I’m [username]. This is my website!</p>
-```
+    total number of all-outs conceded in the tournament
 
-To add your introduction, copy our template and click the edit pencil icon at the top right hand corner of the `index.html` file.
+## Predict the player with the highest SUCCESSFUL RAID percentage.
 
-<img width="997" alt="edit-this-file" src="https://user-images.githubusercontent.com/18093541/63131820-0794d880-bf8d-11e9-8b3d-c096355e9389.png">
+    Fetch top 10 player details of total raids and successful raids count.
+    Calculate the successful raid percentage
 
+## Predict the player with the highest SUCCESSFUL TACKLE percentage.
 
-Delete this placeholder line:
+    Fetch top 10 player details of total tackles and successful tackles count.
+    Calculate the successful tackles percentage.
 
-```
-<p>Welcome to your first GitHub Pages website!</p>
-```
+## Prediction Results
 
-Then, paste the template to line 15 and fill in the blanks.
+1.Winner of the tournament. - Bengal Warriors
+2.Top team in the points table after the completion of the league matches. - Dabang Delhi K.C.
+3.Team with the highest points for successful raids. - Bengal Warriors
+4.Team with the highest points for successful tackles. - Haryana Steelers
+5.Team with the highest super-performance total. - Bengal Warriors
+6.Player with the highest SUCCESSFUL RAID percentage. - Pawan Kumar Sehrawat
+7.Player with the highest SUCCESSFUL TACKLE percentage. - Fazel Atrachali
+## Built With
 
-<img width="1032" alt="edit-githuboctocat-index" src="https://user-images.githubusercontent.com/18093541/63132339-c3a2d300-bf8e-11e9-8222-59c2702f6c42.png">
+    Jupyter Notebook – Software used
+    Python – Programming Language used
+    csv – Input file format used
+    web-scraping – Manually done.
 
+## Authors
 
-When you’re done, scroll down to the `Commit changes` section near the bottom of the edit page. Add a short message explaining your change, like "Add my introduction", then click `Commit changes`.
+    Praful Turanur – prafulturanur2192@gmail.com
+    Amrutha Shenoy – amritakshenoy3435@gmail.com
+    Ayyasamy Nataraj – ayyasamy2301@gmail.com
 
+## Acknowledgments
 
-<img width="1030" alt="add-my-username" src="https://user-images.githubusercontent.com/18093541/63131801-efbd5480-bf8c-11e9-9806-89273f027d16.png">
+    This project is done as part of upGrad Pro Hacking Challenge.
 
-Once you click `Commit changes`, your changes will automatically be published on your GitHub Pages website. Refresh the page to see your new changes live in action.
-
-:tada: You just made your first commit! :tada:
-
-## Extra Credit: Keep on building!
-
-Change the placeholder Octocat gif on your GitHub Pages website by [creating your own personal Octocat emoji](https://myoctocat.com/build-your-octocat/) or [choose a different Octocat gif from our logo library here](https://octodex.github.com/). Add that image to line 12 of your `index.html` file, in place of the `<img src=` link.
-
-Want to add even more code and fun styles to your GitHub Pages website? [Follow these instructions](https://github.com/github/personal-website) to build a fully-fledged static website.
-
-![octocat](./images/create-octocat.png)
-
-## Everything you need to know about GitHub
-
-Getting started is the hardest part. If there’s anything you’d like to know as you get started with GitHub, try searching [GitHub Help](https://help.github.com). Our documentation has tutorials on everything from changing your repository settings to configuring GitHub from your command line.
